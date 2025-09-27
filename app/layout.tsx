@@ -14,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={geistSans.variable}>
         <ThemeProvider>{children}</ThemeProvider>
+        {children}
       </body>
     </html>
   );
