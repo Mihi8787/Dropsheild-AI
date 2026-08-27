@@ -1,10 +1,10 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-});
+const geistSans = GeistSans;
+const geistMono = GeistMono;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <title>Dropshield Mentoring</title>
       </head>
-      <body className={geistSans.variable}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ThemeProvider>{children}</ThemeProvider>
         {children}
       </body>
